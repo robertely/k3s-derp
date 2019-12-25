@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# namespace: monitoring
+
+
+
+resources:
+- resources/monitoring-namespace.yaml
+- resources/prometheus-operator/prometheus-operator-service-account.yaml
+- resources/prometheus-operator/prometheus-operator-cluster-role.yaml
+- resources/prometheus-operator/prometheus-operator-cluster-role-binding.yaml
+- resources/prometheus-operator/prometheus-operator-deployment.yaml
+- resources/prometheus-operator/prometheus-operator-service-monitor.yaml
+- resources/prometheus-operator/prometheus-operator-service.yaml
+- resources/prometheus/prometheus-service-account.yaml
+- resources/prometheus/prometheus-cluster-role.yaml
+- resources/prometheus/prometheus-cluster-role-binding.yaml
+- resources/prometheus/prometheus.yaml
+- resources/prometheus/prometheus-service.yaml
+- resources/prometheus/prometheus-servicemonitor.yaml
+- resources/kube-state-metrics/service-account.yaml
+- resources/kube-state-metrics/cluster-role.yaml
+- resources/kube-state-metrics/cluster-role-binding.yaml
+- resources/kube-state-metrics/deployment.yaml
+- resources/kube-state-metrics/service.yaml
+- resources/kube-state-metrics/servicemonitor.yaml
+- resources/node-exporter/node-exporter-serviceAccount.yaml
+- resources/node-exporter/node-exporter-clusterRole.yaml
+- resources/node-exporter/node-exporter-clusterRoleBinding.yaml
+- resources/node-exporter/node-exporter-daemonset.yaml
+- resources/node-exporter/node-exporter-service.yaml
+- resources/node-exporter/node-exporter-serviceMonitor.yaml
+- resources/grafana/grafana-serviceAccount.yaml
+- resources/grafana/grafana-dashboardDefinitions.yaml
+- resources/grafana/grafana-dashboardSources.yaml
+- resources/grafana/grafana-deployment.yaml
+- resources/grafana/grafana-service.yaml
+- resources/grafana/grafana-serviceMonitor.yaml
