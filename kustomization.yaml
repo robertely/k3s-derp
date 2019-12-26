@@ -36,3 +36,5 @@ resources:
 - resources/grafana/grafana-deployment.yaml
 - resources/grafana/grafana-service.yaml
 - resources/grafana/grafana-serviceMonitor.yaml
+- resources/grafana/grafana-ingress.yaml
+- resources/grafana/grafana-dataSources.yaml
