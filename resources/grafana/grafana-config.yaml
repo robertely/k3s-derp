@@ -1,14 +1,10 @@
-[auth]
-# Set to true to disable (hide) the login form, useful if you use OAuth
-#disable_login_form = false 
-disable_login_form = true
-
-[auth.anonymous]
-# enable anonymous access 
-enabled = true
-
-# specify organization name that should be used for unauthenticated users
-org_name = YOUR_ORG_NAME_HERE
-
-# specify role for unauthenticated users
-org_role = Admin
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+  namespace: monitoring
+data:
+  grafana.ini: |-
+      [auth.anonymous]
+      enabled = true
+      org_role = Admin

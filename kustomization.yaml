@@ -2,8 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # namespace: monitoring
 
-
-
 resources:
 - resources/monitoring-namespace.yaml
 - resources/prometheus-operator/prometheus-operator-service-account.yaml
@@ -38,3 +36,4 @@ resources:
 - resources/grafana/grafana-serviceMonitor.yaml
 - resources/grafana/grafana-ingress.yaml
 - resources/grafana/grafana-dataSources.yaml
+- resources/grafana/grafana-config.yaml
