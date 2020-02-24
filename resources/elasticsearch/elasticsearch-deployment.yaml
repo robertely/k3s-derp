@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+  labels:
+    app: elasticsearch
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.6.0
+          ports:
+            - name: "httpapi"
+              containerPort: 9200
+            - name: "tcpapi"
+              containerPort: 9300
+          env:
+            - name: discovery.type
+              value: "single-node"
+

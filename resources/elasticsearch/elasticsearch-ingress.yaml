@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elasticsearch
+spec:
+  rules:
+  - host: elasticsearch.k3s.8n1.sh
+    http:
+      paths:
+      - backend:
+          serviceName: elasticsearch-http
+          servicePort: 9200
+
+

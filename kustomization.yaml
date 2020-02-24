@@ -37,3 +37,7 @@ resources:
 - resources/grafana/grafana-ingress.yaml
 - resources/grafana/grafana-dataSources.yaml
 - resources/grafana/grafana-config.yaml
+- resources/prometheus/prometheus-ingress.yaml
+- resources/darksky/darksky-exporter-deployment.yaml
+- resources/darksky/darksky-exporter-service.yaml
+- resources/darksky/darksky-exporter-servicemonitor.yaml

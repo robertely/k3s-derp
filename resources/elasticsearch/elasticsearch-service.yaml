@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch
+  name: elasticsearch-http
+spec:
+  ports:
+  - name: httpapi
+    port: 9200
+    protocol: TCP
+    targetPort: httpapi
+  selector:
+    app: elasticsearch
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch
+  name: elasticsearch-tcpapi
+spec:
+  ports:
+  - name: tcpapi
+    port: 9300
+    protocol: TCP
+    targetPort: tcpapi
+  selector:
+    app: elasticsearch
+  type: ClusterIP
